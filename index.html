@@ -1,0 +1,448 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>a11Y</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <a href="#main" class="sr-only sr-only-focusable">Skip to main content</a>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#"><abbr title="Accessibility">A11y</abbr> Demo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="main">
+
+    <div class="container">
+
+        <h1>Accessibility demo</h1>
+        <p>
+            This page is designed to demonstrate some accessibility concepts and issues. It is intentionally very inaccessible
+        </p>
+        <div>
+            <h2>Language</h2>
+            <p>Use a screen reader to listen to the following text</p>
+            <p lang="nl">Dutch: It is important to set the language to the correct setting in order to avoid 
+                the screen reader reading the text using the wrong language rules
+            </p>
+            <p lang="es">Spanish: Imagine your main language is spanish but you open a page that is in english but no language is set. It might try and read the page as if it as spanish like this</p>
+            <p lang="fr">French: Language is important!</p>
+            <p>English: Me dificulta entenderlo! Hay que fijar el idioma adecuado!</p>
+        </div>
+        <hr>
+
+        <H2>Links</H2>
+        <p>To Learn more about something great <a href="">Click Here</a></p>
+        <p>To Learn more about services <a href="">Click Here</a></p>
+        <p><a href="">Learn more about products</a></p>
+        <p>This is a long section of text that is truncated for st... <a href="">Read more</a></p>
+        <p>This is another long section of text that is trunca... <a href="">Read more</a></p>
+
+        <h2>Inputs</h2>
+
+        <form action="">
+            <div class="form-group">
+                <div class="label">Search</div>
+                <input class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="search">
+            </div>
+            <div class="form-group">
+                <label for="search">Search</label>
+                <input class="form-control" type="text" id="search">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="search2" class="label">Search</label>
+                <input class="form-control" type="text" id="search2">
+            </div>
+    
+            <button disabled type="submit">Can't touch this</button>
+        </form>
+
+        <hr>
+
+        <h2>Fieldset</h2>
+
+        <fieldset>
+            <legend>Color</legend>
+            <label for="red">red</label>
+            <input type="radio" name="color" value="red" id="red">
+            <label for="yellow">yellow</label>
+            <input type="radio" name="color" value="yellow" id="yellow">
+            <label for="green">green</label>
+            <input type="radio" name="color" value="green" id="green">
+            <label for="blue">blue</label>
+            <input type="radio" name="color" value="blue" id="blue">
+            <label for="orange">orange</label>
+            <input type="radio" name="color" value="orange" id="orange">
+        </fieldset>
+
+        <hr>
+
+        <h2>Select</h2>
+        <div class="form-group">
+            <label for="select">Select</label>
+            <select name="select" id="select" class="form-control">
+                <option value="test">A</option>
+                <option value="test2">B</option>
+                <option value="test3">C</option>
+                <option value="test4">D</option>
+                <option value="test5">E</option>
+                <option value="test6">F</option>
+                <option value="test7">F 2</option>
+            </select>
+        </div>
+
+        <div class="dropdown form-group">
+            <div onclick="myFunction()" class="dropbtn form-control">Imposter Select</div>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="" onclick="event.preventDefault()" class="dropdown-option">A</a>
+                <a href="" onclick="event.preventDefault()" class="dropdown-option">B</a>
+                <a href="" onclick="event.preventDefault()" class="dropdown-option">C</a>
+                <a href="" onclick="event.preventDefault()" class="dropdown-option">D</a>
+                <a href="" onclick="event.preventDefault()" class="dropdown-option">E</a>
+                <a href="" onclick="event.preventDefault()" class="dropdown-option">F</a>
+                <a href="" onclick="event.preventDefault()" class="dropdown-option">F 2</a>
+            </div>
+        </div>
+
+        <h2>Images</h2>
+
+        <div class="row">
+            <div class="col mb-1">
+                <img src="https://s3-us-west-2.amazonaws.com/buenas-recipes/images/1/400x250/IMG_20180930_181639.jpg" alt="Chocolate Chip cookies">
+            </div>
+            <div class="col mb-1">
+                <img src="https://s3-us-west-2.amazonaws.com/buenas-recipes/images/1/400x250/IMG_20180922_234733.jpg" alt="">
+            </div>
+            <div class="col mb-1">
+                <img src="https://s3-us-west-2.amazonaws.com/buenas-recipes/images/1/400x250/2018_01_27_20_50_53_924_mvimg_20180120_224751.jpg">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <a href="/" class="mb-1 image-background" style="background: url('https://s3-us-west-2.amazonaws.com/buenas-recipes/images/1/400x250/IMG_20181202_182558.jpg') no-repeat"></a>
+            </div>
+            <div class="col">
+                <a href="/" class="mb-1 image-background" style="background: url('https://s3-us-west-2.amazonaws.com/buenas-recipes/images/1/400x250/1546068425133461b185b431de34a039b1c.jpg') no-repeat">
+                    <span class="sr-only" lang="es">Salsa Verde</span>
+                </a>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Font icons</h2>
+        <div class="font-icons row">
+            <a href="/" class="col">
+                <span class="ion ion-social-twitter"></span>
+            </a>
+            <a href="/" class="col">
+                <span class="ion ion-social-facebook">
+                    <span class="sr-only">Facebook</span>
+                </span>
+            </a>
+            <a href="/" class="col">
+                <span>Sports</span>
+                <span class="ion ion-ios-basketball-outline">
+                </span>
+            </a>
+        </div>
+
+        <hr>
+
+        <h2>Lists</h2>
+        <h3>Unordered Lists</h3>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eaque et ex, incidunt inventore nam natus
+                nobis odit officia omnis provident quasi qui, quibusdam, soluta vitae? Cupiditate delectus itaque obcaecati!
+            </li>
+            <li>Culpa cumque, doloribus excepturi expedita fugiat illo iusto laboriosam nam nemo, quo quod saepe totam velit,
+                voluptas voluptatem! Accusantium doloremque quos unde! Eius fugiat harum impedit modi tempora! Praesentium,
+                reprehenderit?
+            </li>
+            <li>Ab, cupiditate dolorum, laboriosam laborum laudantium magni maiores nesciunt nulla pariatur, quibusdam similique
+                suscipit temporibus vitae! Deserunt explicabo, itaque magnam maiores obcaecati, officiis repellat saepe,
+                sapiente sit ullam voluptas voluptates!
+            </li>
+            <li>Accusantium aperiam expedita iste labore laboriosam molestiae nemo, quidem. Ab animi, corporis, dolor enim eos
+                iure laborum, modi molestias nam placeat quam quisquam recusandae temporibus. Aspernatur laudantium praesentium
+                repellat temporibus?
+            </li>
+            <li>Error hic minima modi perferendis placeat quam repudiandae similique. Dignissimos, hic, nam. Amet dolores ea eum
+                praesentium quam quia quidem quis. Aspernatur assumenda dolores eligendi incidunt laboriosam molestias placeat,
+                provident!
+            </li>
+        </ul>
+
+        <h3>Ordered lists</h3>
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+            <li>Third</li>
+            <li>Fourth</li>
+            <li>Fifth</li>
+        </ol>
+
+        <div style="padding-left:20px">
+            1. First <br>
+            2. Second <br>
+            3. Third <br>
+            4. Fourth <br>
+            5. Fifth <br>
+        </div>
+
+        <hr>
+
+        <h2>Buttons</h2>
+        <div class="form-group">
+            <div class="btn btn-primary" onclick="alert('clicked')">I am an imposter button</div>
+        </div>
+        <div>
+            <button class="btn btn-primary" onclick="alert('clicked')">I am a button</button>
+        </div>
+
+        <hr>
+
+        <h2>Aria</h2>
+        <div class="btn btn-primary" onclick="alert('clicked')" role="button" tabindex="0">
+            I am a div that acts mostly like a button - Try activating with the keyboard only
+        </div>
+        <br>
+        <a href="/" role="checkbox">I am a link that tells assistive tech that I am a checkbox</a>
+        <p>
+            No ARIA is better than bad ARIA
+        </p>
+        <hr>
+
+        <h2>Color</h2>
+        <div class="bad-contrast">
+            It's great to read this text isn't it?
+        </div>
+        <div>
+            Click the red button to delete your entire account (can't be undone), or the green button to save your changes
+            <br>
+            <button class="color-button red"></button>
+            <button class="color-button green"></button>
+            <p>Do not rely on color alone to convey meaning</p>
+        </div>
+
+        <hr>
+
+        <h2>Dynamic content</h2>
+        <button id="dynamicContentTrigger" class="btn btn-primary mb-1">Get content</button>
+        <div id="dynamicContent"></div>
+
+        <button id="dynamicContentTriggerLive" class="btn btn-primary">Get content in live region</button>
+        <div id="dynamicContentLive" aria-live="polite"></div>
+
+        <hr>
+
+        <h2>Tables</h2>
+        <table class="table">
+            <caption>Team point differential per game by month 2020</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Team</th>
+                    <th scope="col">January</th>
+                    <th scope="col">February</th>
+                    <th scope="col">March</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Utah Jazz</th>
+                    <td>+4.3</td>
+                    <td>+5.9</td>
+                    <td>+6.4</td>
+                </tr>
+                <tr>
+                    <th scope="row">Golden State Warriors</th>
+                    <td>+5.2</td>
+                    <td>+6.4</td>
+                    <td>+4.1</td>
+                </tr>
+                <tr>
+                    <th scope="row">Los Angeles Lakers</th>
+                    <td>+3.4</td>
+                    <td>+5.9</td>
+                    <td>+4.2</td>
+                </tr>
+                <tr>
+                    <th scope="row">New York Knicks</th>
+                    <td>-3.4</td>
+                    <td>-5.9</td>
+                    <td>-4.2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="table">
+            <div class="caption">Team point differential per game by month 2020</div>
+            <div class="">
+                <div class="row">
+                    <div class="col font-weight-bold">Team</div>
+                    <div class="col font-weight-bold">January</div>
+                    <div class="col font-weight-bold">February</div>
+                    <div class="col font-weight-bold">March</div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col font-weight-bold">Utah Jazz</div>
+                    <div class="col">+4.3</div>
+                    <div class="col">+5.9</div>
+                    <div class="col">+6.4</div>
+                </div>
+                <div class="row">
+                    <div class="col font-weight-bold">Golden State Warriors</div>
+                    <div class="col">+5.2</div>
+                    <div class="col">+6.4</div>
+                    <div class="col">+4.1</div>
+                </div>
+                <div class="row">
+                    <div class="col font-weight-bold">Los Angeles Lakers</div>
+                    <div class="col">+3.4</div>
+                    <div class="col">+5.9</div>
+                    <div class="col">+4.2</div>
+                </div>
+                <div class="row">
+                    <div class="col font-weight-bold">New York Knicks</div>
+                    <div class="col">-3.4</div>
+                    <div class="col">-5.9</div>
+                    <div class="col">-4.2</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Fixed dimensions</h2>
+        <div class="fixed-dimensions">
+            This text looks fine! Unless default font is changed...
+        </div>
+
+        <hr>
+        <h2>Modals</h2>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Open
+        </button>
+        <hr>
+
+        <div class="no-focus-indicator">
+            <h2>Focus indicator</h2>
+            <p>Button roulette</p>
+            <button class="btn btn-primary" type="button">Button 1</button>
+            <button class="btn btn-primary" type="button">Button 2</button>
+            <button class="btn btn-primary" type="button">Button 3</button>
+            <button class="btn btn-primary" type="button">Button 4</button>
+        </div>
+
+        <hr>
+        <h2>auto playing content</h2>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-block w-100"><div class="inner">Slide 1</div></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-block w-100"><div class="inner">Slide 2</div></div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-block w-100"><div class="inner">Slide 3</div></div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <hr>
+        <h2>Form validation</h2>
+
+        <div id="formErrors" class="alert alert-danger" style="display: none">
+            <a href="#name">Name</a> must be at least 6 characters
+        </div>
+
+        <form id="validate">
+            <div class="form-group">
+                <label for="name" class="label">Name</label>
+                <input type="text" id="name" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    The footer
+</footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Make some changes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
