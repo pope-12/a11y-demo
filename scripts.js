@@ -39,6 +39,10 @@ function appendContent(contentId) {
         if (event.target.matches('#dynamicContentTriggerLive')) {
             appendContent('dynamicContentLive');
         }
+
+        if (event.target.matches('#imposter')) {
+            alert('imposter!!');
+        }
     };
 
 
